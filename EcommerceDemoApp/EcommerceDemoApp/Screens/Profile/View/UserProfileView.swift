@@ -15,6 +15,7 @@ struct UserProfileView: View {
             
             LinearGradient(gradient: Gradient(colors: [.blue, .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
+                .accessibility(identifier: "Profile")
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     HStack {
@@ -25,14 +26,18 @@ struct UserProfileView: View {
                             .clipShape(Circle())
                             .overlay(Circle().stroke(Color.white, lineWidth: 4))
                             .shadow(radius: 10)
-                        
+                            .accessibility(identifier: "profileImage")
                         VStack(alignment: .leading, spacing: 4) {
                             Text("\(viewModel.user.firstName) \(viewModel.user.lastName)")
                                 .font(.title)
                                 .fontWeight(.bold)
+                                .accessibility(identifier: "userName")
+
                             Text(viewModel.user.email)
                                 .font(.subheadline)
                                 .foregroundColor(.white)
+                                .accessibility(identifier: "userEmail")
+
                         }
                         .padding(.leading, 8)
                         
@@ -44,7 +49,8 @@ struct UserProfileView: View {
                             Text(StaticMessage.yourOrderTitle)
                                 .font(.title3)
                                 .fontWeight(.medium)
-                            
+                                .accessibility(identifier: "yourOrders")
+
                         }
                         .padding(.vertical, 8)
                         .padding(.horizontal, 8)
@@ -62,6 +68,8 @@ struct UserProfileView: View {
                                 Text(StaticMessage.yourAddressTitle)
                                     .font(.title3)
                                     .fontWeight(.medium)
+                                    .accessibility(identifier: "yourAddress")
+
                             }
                         }
                         .padding(.vertical, 8)
@@ -76,6 +84,8 @@ struct UserProfileView: View {
                     Text(StaticMessage.accountSettingTitle)
                         .font(.title3)
                         .fontWeight(.medium)
+                        .accessibility(identifier: "accountSettings")
+
                     
                     Button {
                         print("")
@@ -83,6 +93,8 @@ struct UserProfileView: View {
                         Text(StaticMessage.editProfileTitle)
                             .font(.subheadline)
                             .fontWeight(.light)
+                            .accessibility(identifier: "editProfile")
+
                     }
                     
                     Button {
@@ -91,6 +103,8 @@ struct UserProfileView: View {
                         Text(StaticMessage.saveCardTitle)
                             .font(.subheadline)
                             .fontWeight(.light)
+                            .accessibility(identifier: "saveCard")
+
                     }
                     
                     Button {
@@ -99,6 +113,8 @@ struct UserProfileView: View {
                         Text(StaticMessage.notificationTitle)
                             .font(.subheadline)
                             .fontWeight(.light)
+                            .accessibility(identifier: "notifications")
+
                     }
                     
                     Button {
@@ -107,6 +123,8 @@ struct UserProfileView: View {
                         Text(StaticMessage.contactUsTitle)
                             .font(.subheadline)
                             .fontWeight(.light)
+                            .accessibility(identifier: "contactUs")
+
                     }
                     
                     Button {
@@ -115,6 +133,8 @@ struct UserProfileView: View {
                         Text(StaticMessage.termsAndPolicyTitle)
                             .font(.subheadline)
                             .fontWeight(.light)
+                            .accessibility(identifier: "termsAndPolicy")
+
                     }
                     
                     Button {
@@ -123,6 +143,8 @@ struct UserProfileView: View {
                         Text(StaticMessage.questionAnswerTitle)
                             .font(.subheadline)
                             .fontWeight(.light)
+                            .accessibility(identifier: "questionAnswer")
+
                     }
                 }
                 .padding()

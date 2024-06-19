@@ -23,13 +23,13 @@ struct ProductDetailsView: View {
                 })
 
                 .multilineTextAlignment(.trailing)
-
+                .accessibility(identifier: "backButton")
                 Spacer()
 
                 AsyncImageView(imageURL: products.image)
                     .scaledToFit()
                     .frame(height: 300)
-
+                    .accessibility(identifier: "image")
                 Spacer()
 
                 Button(action: {
@@ -39,18 +39,22 @@ struct ProductDetailsView: View {
                         .foregroundColor(.gray)
                         .bold()
                 })
+                .accessibility(identifier: "nextButton")
                 .multilineTextAlignment(.trailing)
             }
 
             Text(products.title)
                 .font(.headline)
                 .padding(.top)
+                .accessibility(identifier: "productTitle")
 
             Text(products.description)
                 .font(.footnote)
                 .foregroundStyle(.secondary)
+                .accessibility(identifier: "productDescription")
 
             RatingInfoView(rating: products.rating.rate.toString())
+                .accessibility(identifier: "ratingInfo")
             HStack {
                 VStack(alignment: .leading, spacing: 8) {
                     Text(StaticMessage.totalPriceTitle)
@@ -62,7 +66,8 @@ struct ProductDetailsView: View {
                         .foregroundStyle(.indigo)
                 }
                 .padding(.leading)
-
+                .accessibility(identifier: "priceInfo")
+                
                 Spacer()
 
                 HStack(spacing: 0) {
@@ -77,11 +82,13 @@ struct ProductDetailsView: View {
                             .frame(width: 30, height: 30)
                             .frame(width: 50, height: 50)
                             .background(.indigo)
+                            .accessibility(identifier: "addToCartButton")
                         Text(StaticMessage.buyNowTitle)
                             .font(.headline)
                             .fontWeight(.bold)
                             .frame(width: 100, height: 50)
                             .background(Color(UIColor.darkGray))
+                            .accessibility(identifier: "buyNowButton")
                     }
 
                 }

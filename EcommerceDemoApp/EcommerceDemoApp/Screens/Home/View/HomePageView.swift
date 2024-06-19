@@ -14,6 +14,7 @@ struct HomePageView: View {
         VStack
         {
             SearchBarView(searchBarText: $searchBarText)
+                .accessibilityIdentifier("searchBarText")
             NavigationStack {
                 List
                 {
@@ -22,11 +23,14 @@ struct HomePageView: View {
                             ProductDetailsView(products: product)
                         } label: {
                             HomeProductRowView(product: product)
+                                .accessibilityIdentifier("product_\(product.id)")
+
                         }
                     }
                 }
                 .listStyle(PlainListStyle())
                 .navigationBarBackButtonHidden(true)
+                .accessibility(identifier: "HomePageView")
             }
             .task {
                 await viewModel.fetchProducts()

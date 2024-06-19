@@ -11,7 +11,6 @@ struct CartProductRowView: View {
     
     let product: CartProductModel
     @EnvironmentObject var productDetailsViewModel: ProductDetailsViewModel
-    //@State var cartCount : CartProductModel
     var body: some View {
         HStack(spacing: 8) {
             if let url = URL(string: product.image) {

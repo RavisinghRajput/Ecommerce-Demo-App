@@ -9,7 +9,6 @@ import Foundation
 
 struct AddressModel: Identifiable, Equatable {
     var id: Int
-    
     let firstName: String
     let lastName: String
     let dorNumber: String

@@ -34,6 +34,8 @@ struct LoginView: View {
                         .onChange(of: email) { newValue in
                             isUsernameValid = viewModel.isValidEmail(newValue)
                         }
+                        .accessibility(identifier: "Email") // Set accessibility identifier
+
                     
                     //Password TextField
                     SecureField(StaticMessage.passwordPlaceholder, text: $password)
@@ -46,6 +48,8 @@ struct LoginView: View {
                         .onChange(of: password) { newValue in
                             isPasswordValid = viewModel.isValidPassword(newValue)
                         }
+                        .accessibility(identifier: "Password") // Set accessibility identifier
+
                     
                     //Login Button
                     Button(StaticMessage.loginButtonTitle) {
@@ -54,8 +58,11 @@ struct LoginView: View {
                     .padding()
                     .alert(isPresented: $viewModel.showAlert) {
                         Alert(title: Text(StaticMessage.alertTitle), message: Text(viewModel.alertMessage), dismissButton: .default(Text(StaticMessage.alertOkButton)))
+                        
                     }
-                    
+                    .accessibility(identifier: "LoginAlert") // Set accessibility identifier for the alert
+                    .accessibility(identifier: "Login") // Set accessibility identifier
+
                     NavigationLink(destination: TabBarView(), isActive: $viewModel.navigate) {
                        
                         EmptyView()
