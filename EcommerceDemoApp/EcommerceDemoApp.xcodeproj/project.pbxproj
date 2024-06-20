@@ -652,6 +652,8 @@
 			dependencies = (
 			);
 			name = EcommerceDemoApp;
+			packageProductDependencies = (
+			);
 			productName = EcommerceDemoApp;
 			productReference = F9D8AB152C03BBBF00832BD7 /* EcommerceDemoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -726,6 +728,8 @@
 				Base,
 			);
 			mainGroup = F9D8AB0C2C03BBBF00832BD7;
+			packageReferences = (
+			);
 			productRefGroup = F9D8AB162C03BBBF00832BD7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

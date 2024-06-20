@@ -88,7 +88,7 @@ struct ProductDetailsView: View {
                             .fontWeight(.bold)
                             .frame(width: 100, height: 50)
                             .background(Color(UIColor.darkGray))
-                            .accessibility(identifier: "buyNowButton")
+                            .accessibility(identifier: "buy Now")
                     }
 
                 }
